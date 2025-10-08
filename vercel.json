@@ -2,6 +2,13 @@
   "version": 2,
   "builds": [
     {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "runtime": "python3.9"
+      }
+    },
+    {
       "src": "api/tts.py",
       "use": "@vercel/python",
       "config": {
@@ -18,15 +25,15 @@
   ],
   "routes": [
     {
+      "src": "/",
+      "dest": "/api/index.py"
+    },
+    {
       "src": "/tts",
       "dest": "/api/tts.py"
     },
     {
       "src": "/health",
-      "dest": "/api/health.py"
-    },
-    {
-      "src": "/(.*)",
       "dest": "/api/health.py"
     }
   ],
