@@ -209,6 +209,28 @@ Refer to [training & finetuning guidance](src/f5_tts/train) for best practice.
 f5-tts_finetune-gradio
 ```
 
+### 3. Flask API (local)
+
+```bash
+# Install (editable or package)
+pip install -e .
+
+# Run API locally (defaults: http://127.0.0.1:8000)
+f5-tts_api
+
+# Optional environment overrides
+set F5TTS_API_PORT=8000
+set F5TTS_DEVICE=cuda
+set F5TTS_MODEL=F5TTS_v1_Base
+```
+
+Endpoints:
+- GET `/health` → status check
+- POST `/tts` → returns `audio/wav`
+  - Multipart form-data: `ref_audio` (file, required), `ref_text` (optional), `gen_text` (required)
+  - JSON: `{ "ref_audio_path": "path/to.wav", "ref_text": "...", "gen_text": "..." }`
+  - Query params (optional): `target_rms`, `cross_fade_duration`, `sway_sampling_coef`, `cfg_strength`, `nfe_step`, `speed`, `fix_duration`, `remove_silence`
+
 Read [training & finetuning guidance](src/f5_tts/train) for more instructions.
 
 
