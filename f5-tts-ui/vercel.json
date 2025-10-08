@@ -1,0 +1,9 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://voice-clone-git-feat-add-flask-api-879a3-anaspirzadas-projects.vercel.app"
+  }
+}
