@@ -35,7 +35,11 @@ export default function TTSInterface({ className = '' }: TTSInterfaceProps) {
 
   // Check API connection on component mount
   useEffect(() => {
-    f5ttsClient.healthCheck().then(setApiConnected);
+    console.log('TTSInterface: Checking API connection...');
+    f5ttsClient.healthCheck().then((result) => {
+      console.log('API connection result:', result);
+      setApiConnected(result);
+    });
   }, []);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
