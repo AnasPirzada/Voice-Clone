@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Upload, Play, Pause, Download, Settings } from 'lucide-react';
-import { f5ttsClient, TTSRequest } from '@/lib/api';
+import { f5ttsClient, TTSRequest } from '../lib/api';
 
 interface TTSInterfaceProps {
   className?: string;

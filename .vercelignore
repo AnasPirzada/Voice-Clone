@@ -1,12 +1,8 @@
 # Exclude large files and directories that cause deployment issues
 ckpts/
 data/
-src/f5_tts/model/
-src/f5_tts/runtime/
-src/f5_tts/train/
-src/third_party/
-src/f5_tts.egg-info/
-src/instance/uploads/
+src/
+f5-tts-ui/
 *.wav
 *.flac
 *.mp3
@@ -20,6 +16,12 @@ src/instance/uploads/
 *.h5
 *.pkl
 *.pickle
+*.onnx
+*.tflite
+*.pb
+*.hdf5
+*.npz
+*.npy
 node_modules/
 __pycache__/
 *.pyc
@@ -49,3 +51,11 @@ coverage.xml
 *.swp
 *.swo
 *~
+Dockerfile
+docker-compose.yml
+*.md
+LICENSE
+pyproject.toml
+ruff.toml
+deploy-to-vercel.*
+DEPLOYMENT.md
