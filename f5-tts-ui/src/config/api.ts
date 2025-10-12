@@ -1,7 +1,7 @@
 // API Configuration for F5-TTS
 export const API_CONFIG = {
-  // Local development - your F5-TTS server running on port 8000
-  LOCAL_URL: 'http://127.0.0.1:8000',
+  // Local development - use Next.js API routes that proxy to F5-TTS server
+  LOCAL_URL: '/api',
   
   // Production URL - update this when you deploy
   PRODUCTION_URL: 'https://voice-clone-3pyz.onrender.com',
