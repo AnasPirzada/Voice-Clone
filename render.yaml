@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: f5tts-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements_render.txt
+    startCommand: python app_render_optimized.py
+    envVars:
+      - key: F5TTS_MODEL
+        value: F5TTS_Base
+      - key: F5TTS_DEVICE
+        value: cpu
+      - key: F5TTS_ODE_METHOD
+        value: euler
+      - key: F5TTS_USE_EMA
+        value: "true"
+      - key: HF_HOME
+        value: /tmp/huggingface
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /health
+    autoDeploy: true
